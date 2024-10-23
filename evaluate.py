@@ -11,7 +11,7 @@ def test_model(model, device, test_loader, criterion, classes, test_losses, test
             output = model(data)
             test_loss += criterion(output, target).item()
             pred = output.argmax(dim=1, keepdim=True)
-            is_correct = pred.eq(target.view_ad(pred))
+            is_correct = pred.eq(target.view_as(pred))
 
             if is_last_epoch:
                 misclassified_inds = (is_correct==0).nonzero()[:, 0]
