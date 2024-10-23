@@ -1,7 +1,7 @@
 import torch
 
 
-def test(model, device, test_loader, criterion, classes, test_losses, test_accs, misclassified_ims, correct_ims, is_last_epoch):
+def test_model(model, device, test_loader, criterion, classes, test_losses, test_accs, misclassified_ims, correct_ims, is_last_epoch):
     model.eval()
     correct, test_loss = 0, 0
 
